@@ -23,16 +23,28 @@
             border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
 
-        /* Tech icon hover effect */
+        /* Tech icon hover effect: Starts grayscale, pops to color on hover */
         .tech-card i {
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             filter: grayscale(100%);
-            opacity: 0.6;
+            opacity: 0.5;
         }
         .tech-card:hover i {
             filter: grayscale(0%);
             opacity: 1;
-            transform: scale(1.1);
+            transform: scale(1.15);
+        }
+        .tech-name {
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 0.5rem;
+            color: #94a3b8;
+            transition: color 0.3s ease;
+        }
+        .tech-card:hover .tech-name {
+            color: #1e293b;
         }
     </style>
 </head>
@@ -49,15 +61,15 @@
         </div>
     </nav>
 
-    <header class="max-w-7xl mx-auto px-8 py-24 md:py-40">
+    <header class="max-w-7xl mx-auto px-8 py-24 md:py-40 text-center md:text-left">
         <div data-aos="fade-up" data-aos-duration="1000">
             <h2 class="text-5xl md:text-7xl font-bold leading-tight tracking-tight mb-8">
                 Building digital products <br>with <span class="text-blue-600">precision.</span>
             </h2>
-            <p class="text-xl text-slate-500 max-w-2xl mb-10 leading-relaxed">
+            <p class="text-xl text-slate-500 max-w-2xl mb-10 leading-relaxed mx-auto md:mx-0">
                 From high-conversion landing pages to cross-platform mobile apps, we turn complex ideas into seamless user experiences.
             </p>
-            <div class="flex space-x-4">
+            <div class="flex justify-center md:justify-start space-x-4">
                 <a href="#services" class="border-2 border-slate-900 px-8 py-3 font-semibold hover:bg-slate-900 hover:text-white transition">Our Services</a>
             </div>
         </div>
@@ -91,32 +103,58 @@
         </div>
     </section>
 
-    <section id="stack" class="py-24 max-w-7xl mx-auto px-8 overflow-hidden">
+   <section id="stack" class="py-24 max-w-7xl mx-auto px-8 overflow-hidden">
         <h3 class="text-sm uppercase tracking-widest text-blue-600 font-bold mb-16 text-center" data-aos="zoom-in">Our Tech Stack</h3>
-        <div class="grid grid-cols-3 md:grid-cols-6 gap-8 md:gap-12">
+        <div class="grid grid-cols-3 md:grid-cols-6 gap-y-16 gap-x-8 text-center items-center">
             
-            <div class="flex flex-col items-center space-y-4 tech-card" data-aos="fade-up" data-aos-delay="100">
-                <i class="devicon-html5-plain-wordmark colored text-6xl"></i>
+            <div class="flex flex-col items-center tech-card" data-aos="fade-up" data-aos-delay="100">
+                <i class="devicon-html5-plain colored text-5xl"></i>
+                <span class="tech-name">HTML5</span>
             </div>
-            
-            <div class="flex flex-col items-center space-y-4 tech-card" data-aos="fade-up" data-aos-delay="200">
-                <i class="devicon-css3-plain-wordmark colored text-6xl"></i>
+            <div class="flex flex-col items-center tech-card" data-aos="fade-up" data-aos-delay="150">
+                <i class="devicon-css3-plain colored text-5xl"></i>
+                <span class="tech-name">CSS3</span>
             </div>
-            
-            <div class="flex flex-col items-center space-y-4 tech-card" data-aos="fade-up" data-aos-delay="300">
-                <i class="devicon-javascript-plain colored text-6xl"></i>
+            <div class="flex flex-col items-center tech-card" data-aos="fade-up" data-aos-delay="200">
+                <i class="devicon-javascript-plain colored text-5xl"></i>
+                <span class="tech-name">JavaScript</span>
             </div>
-            
-            <div class="flex flex-col items-center space-y-4 tech-card" data-aos="fade-up" data-aos-delay="400">
-                <i class="devicon-react-original colored text-6xl"></i>
+            <div class="flex flex-col items-center tech-card" data-aos="fade-up" data-aos-delay="250">
+                <i class="devicon-react-original colored text-5xl"></i>
+                <span class="tech-name">React / RN</span>
             </div>
-            
-            <div class="flex flex-col items-center space-y-4 tech-card" data-aos="fade-up" data-aos-delay="500">
-                <i class="devicon-tailwindcss-original colored text-6xl"></i>
+            <div class="flex flex-col items-center tech-card" data-aos="fade-up" data-aos-delay="300">
+                <i class="devicon-tailwindcss-original colored text-5xl"></i>
+                <span class="tech-name">Tailwind</span>
             </div>
-            
-            <div class="flex flex-col items-center space-y-4 tech-card" data-aos="fade-up" data-aos-delay="600">
-                <i class="devicon-git-plain colored text-6xl"></i>
+            <div class="flex flex-col items-center tech-card" data-aos="fade-up" data-aos-delay="350">
+                <i class="devicon-sass-original colored text-5xl"></i>
+                <span class="tech-name">Sass/SCSS</span>
+            </div>
+
+            <div class="flex flex-col items-center tech-card" data-aos="fade-up" data-aos-delay="400">
+                <i class="devicon-flutter-plain colored text-5xl"></i>
+                <span class="tech-name">Flutter</span>
+            </div>
+            <div class="flex flex-col items-center tech-card" data-aos="fade-up" data-aos-delay="450">
+                <i class="devicon-capacitor-plain colored text-5xl"></i>
+                <span class="tech-name">Capacitor</span>
+            </div>
+            <div class="flex flex-col items-center tech-card" data-aos="fade-up" data-aos-delay="500">
+                <i class="devicon-mongodb-plain colored text-5xl"></i>
+                <span class="tech-name">MongoDB</span>
+            </div>
+            <div class="flex flex-col items-center tech-card" data-aos="fade-up" data-aos-delay="550">
+                <i class="devicon-mysql-plain colored text-5xl"></i>
+                <span class="tech-name">SQL</span>
+            </div>
+            <div class="flex flex-col items-center tech-card" data-aos="fade-up" data-aos-delay="600">
+                <i class="devicon-firebase-plain colored text-5xl"></i>
+                <span class="tech-name">Firebase</span>
+            </div>
+            <div class="flex flex-col items-center tech-card" data-aos="fade-up" data-aos-delay="650">
+                <i class="devicon-git-plain colored text-5xl"></i>
+                <span class="tech-name">Git</span>
             </div>
 
         </div>
@@ -136,10 +174,8 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
     <script>
-        // AOS
         AOS.init({ duration: 800, once: true });
 
-        // Lenis
         const lenis = new Lenis();
         function raf(time) {
             lenis.raf(time);
@@ -147,7 +183,6 @@
         }
         requestAnimationFrame(raf);
 
-        // Smooth Anchor Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
